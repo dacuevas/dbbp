@@ -2,22 +2,42 @@
 <html>
 <head>
 <title>DBBP</title>
+<!-- --------REQUIRED SCRIPTS/LINKS---------- -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script src="script.js" type="text/javascript"></script>
-	<link href="style.css" rel="stylesheet" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="assets/script.js" type="text/javascript"></script>
+<!-- 	<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js"></script> -->
+	<link href="assets/style.css" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<!-- 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+<!-- -------------------END ------------------	 -->
+
+<script>
+function showHint(str) {
+    if (str.length == 0) { 
+        document.getElementById("textHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("textHint").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET", "hintarray.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+</script>
 </head>
 <body>
-
-<header>
-<h1>DataBase of Bacterial Phenotypes</h1>
-</header>
+<header><h1>DataBase of Bacterial Phenotypes</h1></header>
 
 <nav>
 <ul id="navtabs">
 	<li value="tables"><a class="active" href="indext.html">Tables</li></a>
 	<li value="api" id="api"><a href="apiindex.html">API</li></a>
-	<li value="github"><a href="#github">GitHub</li></a>
+	<li value="github"><a href="https://github.com/dacuevas/dbbp" target="_blank">GitHub</li></a>
 	<li value="lab"><a href="https://edwards.sdsu.edu/research/" target="_blank">Lab</li></a>
 </ul>
 </nav>
@@ -28,15 +48,17 @@
 <div id="datasearch">
 <h2>Data Search:</h2>
 <form>
-	<label for="table">Table:</label>
-	<input type="text" id="table" name="table">
-	<!--<label for="sample">BacteriaID:</label>
-	<input type="text" id="bacteriaid" name="bacteriaid"> -->
+	<label for="table">Table:</label><label for="table" id="star" style="color:red">*</label>
+	<input type="text" id="table" name="table" required></input>
+	<label for="sample">BacteriaID:</label>
+	<input type="text" id="bacteriaid" name="bacteriaid"></input>
 	<label for="mainsource">Mainsource:</label>
-	<input type="text" id="mainsource" name="mainsource">
+	<input type="text" id="mainsource" name="mainsource"></input>
 	<label for="compound">Compound:</label>
-	<input type="text" id="compound" name="compound">
-	<button class="button" id="datasearch" name="datasearch" onclick="searchTable(); return false;">Search</button>
+	<input type="text" id="compound" name="compound" onkeyup="showHint(this.value)"></input><br>
+	<p id="requirement" style="font-size:90%; color:red;">* Required before searching</p><br>
+	<p id="suggestions" style="margin-top: -10px;"> Compound Suggestions: <span id="textHint"></span></p>
+	<button class="button" id="searchbtn" name="searchbtn" onclick="searchTable(); return false;">Search</button>
 </form>
 </div> <!-- datasearch div end -->
 <br>
@@ -48,154 +70,42 @@
 <!--<label class = "dropheading" id="MainSourceH"> Mainsources </label>
 <label class = "dropheading" id="PlateH"> Plates </label>
 <label class = "dropheading" id="CompoundH"> Compounds </label><br>-->
-<form class="dropitems" id ="MainSource">
-	<select data = "data" onchange = "showTable(this.value)">
-		<option value = ""> Mainsources </option>
-		 <option value = "1"> Carbon </option>
-		 <option value = "2"> Nitrogen </option>
-		 <option value = "3"> Sulfur </option>
-		 <option value = "4"> Phosphorus </option>
+
+<form class = "dropitems">
+	<select data = "data" id = "mainsourceSelect">
+	
 	</select>
 </form>
 
-<form class="dropitems" id ="Plate">
-	<select data = "PlateD" onchange = "showTable(this.value)">
-		<option value = ""> Plates </option>
-		 <option value = "1"> Plate 1 </option>
-		 <option value = "2"> Plate 2 </option>
+<form class = "dropitems">
+	<select data = "data" id = "plateSelect" >
+		
 	</select>
 </form>
 
-<form class="dropitems" id ="Compound">
-	<select data = "CompoundD" onchange = "showTable(this.value)">
-		<option value = ""> Compounds </option>
-		 <option value = "1"> 2 Deoxy-D-Ribose </option>
-		 <option value = "2"> 4 Hydroxy-Phenylacetate </option>
-		 <option value = "3"> Acetic Acid </option>
-		 <option value = "4"> Adenine </option>
-		 <option value = "5"> Adenosine </option>
-		 <option value = "6"> Adonitol </option>
-		 <option value = "7"> Allantoin </option>
-		 <option value = "8"> Alpha-D-Glucose </option>
-		 <option value = "9"> Alpha-D-Lactose </option>
-		 <option value = "10"> Beta-Phenylethylamine </option>
-		 <option value = "11"> Biuret </option>
-		 <option value = "12"> Cellobiose </option>
-		 <option value = "13"> Citric Acid </option>
-		 <option value = "14"> Cytidine </option>
-		 <option value = "15"> Cytosine </option>
-		 <option value = "16"> D-Alanine </option>
-		 <option value = "17"> D-Arabinose </option>
-		 <option value = "18"> D-Arabitol </option>
-		 <option value = "19"> D-Asparagine </option>
-		 <option value = "20"> D-Aspartic Acid </option>
-		 <option value = "21"> D-Cysteine </option>
-		 <option value = "22"> D-Fructose </option>
-		 <option value = "23"> D-Galactose </option>
-		 <option value = "24"> D-Glucosamine </option>
-		 <option value = "25"> D-Glucose </option>
-		 <option value = "26"> D-Glucose-6-Phosphate </option>
-		 <option value = "27"> D-Glutamic Acid </option>
-		 <option value = "28"> D-Mannose </option>
-		 <option value = "29"> D-Methionine </option>
-		 <option value = "30"> D-Ribose </option>
-		 <option value = "31"> D-Serine </option>
-		 <option value = "32"> D-Valine </option>
-		 <option value = "33"> D-Xylose </option>
-		 <option value = "34"> Dulcitol </option>
-		 <option value = "35"> Erythritol </option>
-		 <option value = "36"> Glycerol </option>
-		 <option value = "37"> Glycine </option>
-		 <option value = "38"> Guanidine </option>
-		 <option value = "39"> Histamine </option>
-		 <option value = "40"> Inosine </option>
-		 <option value = "41"> L-Alanine </option>
-		 <option value = "42"> L-Arabinose </option>
-		 <option value = "43"> L-Arabitol </option>
-		 <option value = "44"> L-Arginine </option>
-		 <option value = "45"> L-Asparagine </option>
-		 <option value = "46"> L-Aspartic Acid </option>
-		 <option value = "47"> L-Cysteic Acid </option>
-		 <option value = "48"> L-Cysteine </option>
-		 <option value = "49"> L-Fucose </option>
-		 <option value = "50"> L-Glutamic Acid </option>
-		 <option value = "51"> L-Glutamine </option>
-		 <option value = "52"> L-Glutathione </option>
-		 <option value = "53"> L-Histidine </option>
-		 <option value = "54"> L-Isoleucine </option>
-		 <option value = "55"> L-Leucine </option>
-		 <option value = "56"> L-Lysine </option>
-		 <option value = "57"> L-Methionine </option>
-		 <option value = "58"> L-Phenylalanine </option>
-		 <option value = "59"> L-Proline </option>
-		 <option value = "60"> L-Pyro-Glutamic Acid </option>
-		 <option value = "61"> L-Rhamnose </option>
-		 <option value = "62"> L-Serine </option>
-		 <option value = "63"> L-Sorbose </option>
-		 <option value = "64"> L-Threonine </option>
-		 <option value = "65"> L-Tryptophan </option>
-		 <option value = "66"> L-Valine </option>
-		 <option value = "67"> L-Xylose </option>
-		 <option value = "68"> Lactate </option>
-		 <option value = "69"> Lactulose </option>
-		 <option value = "70"> Malic Acid </option>
-		 <option value = "71"> Melibiose </option>
-		 <option value = "72"> Myo-Inositol </option>
-		 <option value = "73"> N-Acetyl-D-Glucosamine </option>
-		 <option value = "74"> Oxalic Acid </option>
-		 <option value = "75"> Potassium Sorbate </option>
-		 <option value = "76"> Propionate </option>
-		 <option value = "77"> Putrescine </option>
-		 <option value = "78"> Pyruvate </option>
-		 <option value = "79"> Quinate </option>
-		 <option value = "80"> Raffinose </option>
-		 <option value = "81"> Salicoside </option>
-		 <option value = "82"> Succinate </option>
-		 <option value = "83"> Sucrose </option>
-		 <option value = "84"> Thiourea </option>
-		 <option value = "85"> Thymidine </option>
-		 <option value = "86"> Thymine </option>
-		 <option value = "87"> Trehalose </option>
-		 <option value = "88"> Tyramine </option>
-		 <option value = "89"> Uridine </option>
-		 <option value = "90"> Xylitol </option>
+<form class = "dropitems">
+	<select data = "data" id = "compoundSelect">
+		
 	</select>
 </form>
-
 </div> <!-- inforsearch div end-->
 <br>
 <br>
 <br>
-<h2>Table Buttons:</h2>
-<button class="button plate1" id="Plate_1" name="Plate_1" onclick="loadOptions(); return false;"> Plate 1 </button>
-<button class="button plate2" id="Plate_2" name="Plate_2"> Plate 2 </button>
-<button class="button experiment" id="Experiment" name="Experiment"> Experiment </button>
-<button class="button growthp" id="GrowthParameters" name="GrowthParameters"> Growth Parameters </button>
+<br> 
 <br>
 <br>
 <br>
-<div id="p1Checks" style="display:none">
-	<form>
-			<input type="checkbox" name="well" value="Well">Well</input>
-			<input type="checkbox" name="mainsource" value="Mainsource">Mainsource</input>
-			<input type="checkbox" name="compound" value="Compound">Compound</input>
-			<input type="checkbox" name="concentration" value="Concentration">Concentration</input>
-	</form>
-</div> <!-- p1checks div end-->
-<br>
-<div id="displaybelow">
-Table will display here... (limited to first 20 rows)
-</div> <!-- displaybelow div end-->
-<div id="answer">
-</div> <!-- answer div end-->
-</div> <!-- tables div end-->
+<div id="displaybelow"> Table will display here... </div>
+<div id="answer"> </div> 
 
+<button class="button previous" id="previous" name="previous" style="float: left;" onclick="previousButton(); return false;"> Previous </button>
+<button class="button next" id="next" name="next" style="float: right;" onclick="nextButton(); return false;"> Next </button>
+
+</div> <!-- tables div end-->
 </section>
 
+<footer>Edwards Lab</footer>
 
-
-<footer>
-Edwards Lab
-</footer>
 </body>
 </html>
