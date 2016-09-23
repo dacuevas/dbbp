@@ -93,9 +93,6 @@ input[type=text] {
 .button:hover {
 	background-color: rgb(15, 26, 255);
 }
-.button#next {
-    width: 126px;   
-}
 /*  --------END OF DATA SEARCH ------- */
 
 /* ----------------TABLE STYLING --------- */
