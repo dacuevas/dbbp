@@ -12,7 +12,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$search = "SELECT DISTINCT Mainsource FROM Plate_1";
+$search = "SELECT DISTINCT Mainsource FROM Plates";
 $sql = $search;
 $result = mysqli_query($conn, $sql);
 $mainsource = array();
@@ -23,14 +23,7 @@ if(mysqli_num_rows($result) > 0) {
 			$mainsource[$n++] = $row["Mainsource"];
 		}
 }
-$search = "SELECT DISTINCT Mainsource FROM Plate_2";
-$sql = $search;
-$result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)) {
-			$mainsource[$n++] = $row["Mainsource"];
-		}
-}
+
 function cmp($a, $b) {
     return strcmp($a["value"], $b["value"]);
 }

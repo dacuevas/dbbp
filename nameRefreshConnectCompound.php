@@ -12,7 +12,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$search = "SELECT DISTINCT Compound FROM Plate_1";
+$search = "SELECT DISTINCT Compound FROM Plates";
 $sql = $search;
 $result = mysqli_query($conn, $sql);
 $compounds = array();
@@ -23,15 +23,6 @@ if(mysqli_num_rows($result) > 0) {
 			$compounds[$n++] = $row["Compound"];
 		}
 } 
-$search = "SELECT DISTINCT Compound FROM Plate_2";
-$sql = $search;
-$result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result) > 0) {
-       while($row = mysqli_fetch_assoc($result)) {
-			$compounds[$n++] = $row["Compound"];
-		}
-}
-
 
 function cmp($a, $b){
     return strcmp($a["value"], $b["value"]);
