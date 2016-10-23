@@ -23,19 +23,15 @@ $column = $_REQUEST["r"];
         }
 } else {
 
- if ($column != "BacteriaID") {
- 	$sql = "SELECT DISTINCT $column FROM Plate_1";
+//---------------------------- Plates doesn't have BacteriaIDs
+ if ($column != "BacteriaID") { 
+ 	$sql = "SELECT DISTINCT $column FROM Plates";
  	$result = $conn->query($sql);
  	while ($row = $result->fetch_assoc()) {
          	array_push($array, $row["$column"]);
          }
- 
- 	$sql = "SELECT DISTINCT $column FROM Plate_2";
- 	$result = $conn->query($sql);
- 	while ($row = $result->fetch_assoc()) {
-         	array_push($array, $row["$column"]);
-         }
- }
+   }
+ //-----------------------------
  
  $sql = "SELECT DISTINCT $column FROM GrowthParameters";
  $result = $conn->query($sql);
