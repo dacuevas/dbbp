@@ -1,9 +1,6 @@
-
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$database = "Data";
+// Load login info
+require "dbbp_mysql_config.php";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
