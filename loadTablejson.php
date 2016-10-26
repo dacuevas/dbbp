@@ -2,7 +2,7 @@
 // Load login info
 require "dbbp_mysql_config.php";
 
-$ret = ["data" => [] , "header" => []];
+$ret = array("data" => array() , "header" => array());
 // $head = array();
 
 // Create connection
@@ -21,7 +21,7 @@ $cpound = $_GET['cpound'];
 $sql = "SELECT * FROM $table ";
 $limitForRows = " LIMIT 20 OFFSET $start";
 if (empty($bid) && empty($msource) && empty($cpound)) {
-	$sqlwhere = ""; 
+	$sqlwhere = "";
 }
 elseif (empty($msource) && empty($cpound)) {
     $sqlwhere = "WHERE BacteriaID='$bid'";
@@ -36,7 +36,7 @@ elseif (empty($bid)) {
 	$sqlwhere = "WHERE Mainsource='$msource' AND Compound='$cpound'"; //all but bacteriaID
 }
 elseif (empty($msource)) {
-	$sqlwhere = "WHERE BacteriaID='$bid' AND Compound='$cpound'";	
+	$sqlwhere = "WHERE BacteriaID='$bid' AND Compound='$cpound'";
 }
 elseif (empty($cpound)) {
 	$sqlwhere = "WHERE BacteriaID='$bid' AND Mainsource='$msource'";	

@@ -2,7 +2,7 @@
 // Load login info
 require "dbbp_mysql_config.php";
 
-$ret = ["data" => []];
+$ret = array("data" => array());
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
