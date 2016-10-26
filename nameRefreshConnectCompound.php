@@ -3,7 +3,7 @@
 require "dbbp_mysql_config.php";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check connection
 if (!$conn) {
