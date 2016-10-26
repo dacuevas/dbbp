@@ -33,5 +33,5 @@ foreach ($final as $name) {
 	echo "<option> $name </option>";
 }
 
-msqli_close($conn);
+mysqli_close($conn);
 ?>
