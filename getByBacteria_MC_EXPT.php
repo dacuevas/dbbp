@@ -18,8 +18,13 @@ $msource = $_GET['ms'];
 $cpound = $_GET['cp'];
 
 //-------------PUTTING PARAMETERS INTO RESP. ARRAYS----------------------
+//removing quotation marks from strings with trim
+$bid = trim($bid, '"'); 
+$msource = trim($msource, '"');
+$cpound = trim($cpound, '"');
+
 if(strpos($bid, ',') !== false) {
-	$bid = explode(',' , $bid);   //array of passed in mainsouces	
+	$bid = explode(',' , $bid);   //array of passed in bacteria ids	
 } else {
 	$bid = array($bid);	
 }
