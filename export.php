@@ -1,8 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "Data";
+// Load login info
+require "dbbp_mysql_config.php";
 
 $ret = array();
 $head = array();
