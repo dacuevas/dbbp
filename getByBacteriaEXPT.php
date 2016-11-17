@@ -17,6 +17,7 @@ if ($conn->connect_error) {
 $bid = $_GET['bid'];
 
 //--------PUTTING PARAMETERS INTO AN ARRAY -----
+$bid = trim($bid, '"');
 if(strpos($bid, ',') !== false) {
 	$bid = explode(',' , $bid);   //array of passed in mainsouces	
 } else {
@@ -34,7 +35,7 @@ foreach ($bid as $key => $value) {
 	}
 }
 
-echo $sql;
+
 //----------- EXTRACTING FROM DATABASE -------------
 $result = $conn->query($sql);
 

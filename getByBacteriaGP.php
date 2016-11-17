@@ -4,7 +4,7 @@ $username = "root";
 $password = "root";
 $dbname = "Data";
 
-$ret = ["data" => []];
+$ret = array("data" => array());
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,24 +17,24 @@ if ($conn->connect_error) {
 $bid = $_GET['bid'];
 
 //--------PUTTING PARAMETERS INTO AN ARRAY -----
+$bid = trim($bid, '"');
 if(strpos($bid, ',') !== false) {
 	$bid = explode(',' , $bid);   //array of passed in mainsouces	
 } else {
 	$bid = array($bid);	
 }
-
 //--------------- SQL STATEMENT------------------
 $sql = "SELECT * FROM GrowthParameters WHERE ";
 
 foreach ($bid as $key => $value) {
-	$sql .= "BacteriaID='$value'";
+	$sql .= "BacteriaID= '$value'  ";
 	
 	if( $key != (sizeof($bid)-1) ) {
 		$sql .= " OR ";
 	}
 }
 
-echo $sql;
+
 //----------- EXTRACTING FROM DATABASE -------------
 $result = $conn->query($sql);
 
