@@ -1,6 +1,8 @@
 <?php
-// Load login info
-require "dbbp_mysql_config.php";
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "Data";
 
 $array = array();
 
@@ -43,11 +45,11 @@ $column = $_REQUEST["r"];
          	array_push($array, $row["$column"]);
          }
     
-// $sql = "SELECT DISTINCT $column FROM Bacteria";
-// $result = $conn->query($sql);
-// while ($row = $result->fetch_assoc()) {
-//         	array_push($array, $row["$column"]);
-//         }   
+$sql = "SELECT DISTINCT $column FROM Bacteria";
+$result = $conn->query($sql);
+while ($row = $result->fetch_assoc()) {
+        	array_push($array, $row["$column"]);
+        }   
  
  } //-----end of else-----
      
