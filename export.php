@@ -1,6 +1,8 @@
 <?php
-// Load login info
-require "dbbp_mysql_config.php";
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "Data";
 
 $ret = array();
 $head = array();
@@ -47,10 +49,7 @@ if (empty($bid) && empty($msource) && empty($cpound)) {
 $result = $conn->query($sql);
 
 while( $row = $result->fetch_assoc()) {
-    if ($table == "Plate_1") {
-        array_push($ret, $row);
-    }
-    if ($table == "Plate_2") {
+    if ($table == "Plates") {
         array_push($ret, $row);
     }
     if ($table == "GrowthParameters") {
