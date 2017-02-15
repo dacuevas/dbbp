@@ -11,18 +11,24 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-//$bid = "E.cloacae"; //96 rows
 $bid = $_GET['bid'];
+$msource = $_GET['ms'];
+$cpound = $_GET['cp'];
 
-//--------PUTTING PARAMETERS INTO AN ARRAY -----
+//-------------PUTTING PARAMETERS INTO RESP. ARRAYS----------------------
+//removing quotation marks from strings with trim
+$bid = trim($bid, '"'); 
+$msource = trim($msource, '"');
+$cpound = trim($cpound, '"');
+
 if(strpos($bid, ',') !== false) {
-	$bid = explode(',' , $bid);   //array of passed in mainsouces	
+	$bid = explode(',' , $bid);   //array of passed in bacteria ids	
 } else {
 	$bid = array($bid);	
 }
 
 //--------------- SQL STATEMENT------------------
-$sql = "SELECT * FROM Experiment WHERE ";
+$sql = "SELECT * FROM Experiment WHERE (";
 
 foreach ($bid as $key => $value) {
 	$sql .= "BacteriaID='$value'";
@@ -31,9 +37,9 @@ foreach ($bid as $key => $value) {
 		$sql .= " OR ";
 	}
 }
+$sql .= ") AND Mainsource='$msource' AND Compound='$cpound' ";
 
-echo $sql;
-//----------- EXTRACTING FROM DATABASE -------------
+// //----------- EXTRACTING FROM DATABASE -------------
 $result = $conn->query($sql);
 
 while ($row = $result->fetch_assoc()) {

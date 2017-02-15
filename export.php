@@ -47,10 +47,7 @@ if (empty($bid) && empty($msource) && empty($cpound)) {
 $result = $conn->query($sql);
 
 while( $row = $result->fetch_assoc()) {
-    if ($table == "Plate_1") {
-        array_push($ret, $row);
-    }
-    if ($table == "Plate_2") {
+    if ($table == "Plates") {
         array_push($ret, $row);
     }
     if ($table == "GrowthParameters") {

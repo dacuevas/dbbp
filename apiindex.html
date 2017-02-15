@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>DBBP</title>
+<title>DBBP - API</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="assets/script.js" type="text/javascript"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -14,7 +14,7 @@
 
 <nav>
 <ul id="navtabs">
-	<li value="tables"><a href="index.html">Tables</li></a>
+	<li value="tables"><a href="indext.html">Tables</li></a>
 	<li value="api"><a href="apiindex.html" class="active">API</li></a>
 	<li value="github"><a href="https://github.com/dacuevas/dbbp" target="_blank">GitHub</li></a>
 	<li value="lab"><a href="https://edwards.sdsu.edu/research/" target="_blank">Lab</li></a>
@@ -24,7 +24,43 @@
 <section>
 	<div id="apisection">
 		<h1> API </h1>
-		<h2>testing this page text. </h2>
+		<h3>These four PHP scripts uniquely extract data from the database by Bacteria ID(s), as well as other parameters when specified, then returns results in the form of a JSON object.</h3>
+		<h4><a href="API_phps/getByBacteriaGP.php" class="active" target="_blank">getByBacteriaGP.php </h4></a>
+		<body> To access data from the Growth Parameters table, simply click on the script link above,  in the address box after <font face="Andale Mono, Courier">getByBacteriaGP.php</font>, add 
+			 <font face="Andale Mono, Courier">?bid="id1,id2,id3"</font>  
+			 where the Bacteria IDs are within double quotations and separated by a comma. One Bacteria ID is sufficient, omit any commas. Capitalization is unnecessary. 
+			 <br/><br/>
+			 Example:<br/>
+			 	<font face="Andale Mono, Courier">getByBacteriaGP.php?bid="ed002,ed007"</font> <br/>OR <br/>
+			 	<font face="Andale Mono, Courier">getByBacteriaGP.php?bid="ed002"</font></body>
+		
+		<h4><a href="API_phps/getByBacteriaEXPT.php" class="active" target="_blank">getByBacteriaEXPT.php </h4></a>
+		<body> To access data from the Experiment table, simply click on the script link above,  in the address box after <font face="Andale Mono, Courier">getByBacteriaEXPT.php</font>, add 
+			 <font face="Andale Mono, Courier">?bid="id1,id2,id3"</font>  
+			 where the Bacteria IDs are within double quotations and separated by a comma. One Bacteria ID is sufficient, omit any commas. Capitalization is unnecessary. 
+			 <br/><br/>
+			 Example:<br/>
+			 	<font face="Andale Mono, Courier">getByBacteriaEXPT.php?bid="ed002,ed007"</font> <br/>OR <br/>
+			 	<font face="Andale Mono, Courier">getByBacteriaEXPT.php?bid="ed002"</font></body>
+		
+		<h4><a href="API_phps/getByBacteria_MC_GP.php" class="active" target="_blank">getByBacteria_MC_GP.php </h4></a>
+		<body> To access data from the Growth Parameters table by Bacteria ID, as well as, Main Source and/or Compound, simply click on the script link above.  In the address box after <font face="Andale Mono, Courier">getByBacteria_MC_GP.php</font>, add 
+			 <font face="Andale Mono, Courier">?bid="id1,id2,id3"&ms="mainsource"&cp="compound"</font>  
+			 where the Bacteria IDs, Main Source and/or Compound are within their respective double quotations. One Bacteria ID is sufficient, if multiple, separate with commas. Capitalization is unnecessary. 
+			 <br/><br/>
+			 Example:<br/>
+			 	<font face="Andale Mono, Courier">getByBacteria_MC_GP.php?bid="ed002,ed007"&ms="carbon"&cp="propionate"</font> <br/>OR <br/>
+			 	<font face="Andale Mono, Courier">getByBacteria_MC_GP.php?bid="ed002"&ms="carbon"&cp="propionate"</font></body>
+			 	
+		<h4><a href="API_phps/getByBacteria_MC_EXPT.php" class="active" target="_blank">getByBacteria_MC_EXPT.php </h4></a>
+		<body> To access data from the Experiment table by Bacteria ID, as well as, Main Source and/or Compound, simply click on the script link above.  In the address box after <font face="Andale Mono, Courier">getByBacteria_MC_EXPT.php</font>, add 
+			 <font face="Andale Mono, Courier">?bid="id1,id2,id3"&ms="mainsource"&cp="compound"</font>  
+			 where the Bacteria IDs, Main Source and/or Compound are within their respective double quotations. One Bacteria ID is sufficient, if multiple, separate with commas. Capitalization is unnecessary. 
+			 <br/><br/>
+			 Example:<br/>
+			 	<font face="Andale Mono, Courier">getByBacteria_MC_EXPT.php?bid="ed002,ed007"&ms="carbon"&cp="propionate"</font> <br/>OR <br/>
+			 	<font face="Andale Mono, Courier">getByBacteria_MC_EXPT.php?bid="ed002"&ms="carbon"&cp="propionate"</font></body>
+			 	<br/><br/>
 	</div> <!-- apisection div end-->
 </section>
 

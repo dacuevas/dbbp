@@ -11,29 +11,28 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$bid = $_GET['bid'];
-$msource = $_GET['ms'];
-$cpound = $_GET['cp'];
-
+$gclass = $_GET['gclass'];
 //-------------PUTTING PARAMETERS INTO RESP. ARRAYS----------------------
-if(strpos($bid, ',') !== false) {
-	$bid = explode(',' , $bid);   //array of passed in mainsouces	
+//removing quotation marks from strings with trim
+$gclass = trim($gclass, '"'); 
+
+//creating array of growth classes
+if(strpos($gclass, ',') !== false) {
+	$gclass = explode(',' , $gclass);   //array of passed in growth classes
 } else {
-	$bid = array($bid);	
+	$gclass = array($gclass);	
 }
-
 //--------------- SQL STATEMENT------------------
-$sql = "SELECT * FROM GrowthParameters WHERE (";
+$sql = "SELECT * FROM GrowthParameters WHERE ";
 
-foreach ($bid as $key => $value) {
-	$sql .= "BacteriaID='$value'";
+foreach ($gclass as $key => $value) {
+	$sql .= "Growth_Class='$value' ";
 	
-	if( $key != (sizeof($bid)-1) ) {
+	if( $key != (sizeof($gclass)-1) ) {
 		$sql .= " OR ";
 	}
 }
-$sql .= ") AND Mainsource='$msource' AND Compound='$cpound' ";
-echo $sql;
+
 // //----------- EXTRACTING FROM DATABASE -------------
 $result = $conn->query($sql);
 

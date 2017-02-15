@@ -12,16 +12,26 @@ if ($conn->connect_error) {
 }
 
 $bid = $_GET['bid'];
-$msource = $_GET['ms'];
-$cpound = $_GET['cp'];
+$well = $_GET['well'];
 
 //-------------PUTTING PARAMETERS INTO RESP. ARRAYS----------------------
+//removing quotation marks from strings with trim
+$bid = trim($bid, '"'); 
+$well = trim($well, '"');
+
+//creating array of bacteria ids
 if(strpos($bid, ',') !== false) {
-	$bid = explode(',' , $bid);   //array of passed in mainsouces	
+	$bid = explode(',' , $bid);   //array of passed in bacteria ids	
 } else {
 	$bid = array($bid);	
 }
 
+//creating array of wells
+if(strpos($well, ',') !== false) {
+	$well = explode(',' , $well);   //array of passed in bacteria ids	
+} else {
+	$well = array($well);	
+}
 //--------------- SQL STATEMENT------------------
 $sql = "SELECT * FROM Experiment WHERE (";
 
@@ -32,7 +42,16 @@ foreach ($bid as $key => $value) {
 		$sql .= " OR ";
 	}
 }
-$sql .= ") AND Mainsource='$msource' AND Compound='$cpound' ";
+$sql .=") AND (";
+
+foreach ($well as $key => $value) {
+	$sql .= "Well='$value'";
+	
+	if( $key != (sizeof($well)-1) ) {
+		$sql .= " OR ";
+	}
+}
+$sql .= ")";
 
 // //----------- EXTRACTING FROM DATABASE -------------
 $result = $conn->query($sql);
