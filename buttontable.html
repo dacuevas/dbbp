@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    border-style: inset;
+    border-collapse: collapse;
+    padding: 10px;
+}
+.button5 {
+	width: 58px;
+}
+ .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    font-size:small;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;  
+}
+
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body style="padding-left: 30px">
+<table style="width:50%">
+<caption>Plate 1</caption>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A1 
+<span class="tooltiptext">
+Well: A1 <br>
+Mainsource: Carbon <br>
+Compound: Propionate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A2 
+<span class="tooltiptext">
+Well: A2 <br>
+Mainsource: Carbon <br>
+Compound: L-Glutamic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A3 
+<span class="tooltiptext">
+Well: A3 <br>
+Mainsource: Carbon <br>
+Compound: D-Glucose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A4 
+<span class="tooltiptext">
+Well: A4 <br>
+Mainsource: Carbon <br>
+Compound: Potassium Sorbate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A5 
+<span class="tooltiptext">
+Well: A5 <br>
+Mainsource: Carbon <br>
+Compound: Lactulose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A6 
+<span class="tooltiptext">
+Well: A6 <br>
+Mainsource: Carbon <br>
+Compound: Glycerol <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A7 
+<span class="tooltiptext">
+Well: A7 <br>
+Mainsource: Carbon <br>
+Compound: Myo-Inositol <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A8 
+<span class="tooltiptext">
+Well: A8 <br>
+Mainsource: Carbon <br>
+Compound: D-Serine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A9 
+<span class="tooltiptext">
+Well: A9 <br>
+Mainsource: Carbon <br>
+Compound: D-Galactose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A10 
+<span class="tooltiptext">
+Well: A10 <br>
+Mainsource: Carbon <br>
+Compound: Oxalic Acid <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A11 
+<span class="tooltiptext">
+Well: A11 <br>
+Mainsource: Carbon <br>
+Compound: Malic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A12 
+<span class="tooltiptext">
+Well: A12 <br>
+Mainsource: Carbon <br>
+Compound: L-Methionine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B1 
+<span class="tooltiptext">
+Well: B1 <br>
+Mainsource: Carbon <br>
+Compound: Glycine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B2 
+<span class="tooltiptext">
+Well: B2 <br>
+Mainsource: Carbon <br>
+Compound: Negative Control <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B3 
+<span class="tooltiptext">
+Well: B3 <br>
+Mainsource: Carbon <br>
+Compound: Quinate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B4 
+<span class="tooltiptext">
+Well: B4 <br>
+Mainsource: Carbon <br>
+Compound: Succinate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B5 
+<span class="tooltiptext">
+Well: B5 <br>
+Mainsource: Carbon <br>
+Compound: Dulcitol <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B6 
+<span class="tooltiptext">
+Well: B6 <br>
+Mainsource: Carbon <br>
+Compound: Alpha-D-Glucose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B7 
+<span class="tooltiptext">
+Well: B7 <br>
+Mainsource: Carbon <br>
+Compound: L-Xylose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B8 
+<span class="tooltiptext">
+Well: B8 <br>
+Mainsource: Carbon <br>
+Compound: L-Aspartic Acid <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B9 
+<span class="tooltiptext">
+Well: B9 <br>
+Mainsource: Carbon <br>
+Compound: D-Fructose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B10 
+<span class="tooltiptext">
+Well: B10 <br>
+Mainsource: Carbon <br>
+Compound: L-Valine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B11 
+<span class="tooltiptext">
+Well: B11 <br>
+Mainsource: Carbon <br>
+Compound: Pyruvate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B12 
+<span class="tooltiptext">
+Well: B12 <br>
+Mainsource: Carbon <br>
+Compound: Lactate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C1 
+<span class="tooltiptext">
+Well: C1 <br>
+Mainsource: Carbon <br>
+Compound: Citric Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C2 
+<span class="tooltiptext">
+Well: C2 <br>
+Mainsource: Carbon <br>
+Compound: D-Mannose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C3 
+<span class="tooltiptext">
+Well: C3 <br>
+Mainsource: Carbon <br>
+Compound: L-Serine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C4 
+<span class="tooltiptext">
+Well: C4 <br>
+Mainsource: Carbon <br>
+Compound: Salicoside <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C5 
+<span class="tooltiptext">
+Well: C5 <br>
+Mainsource: Carbon <br>
+Compound: Cellobiose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C6 
+<span class="tooltiptext">
+Well: C6 <br>
+Mainsource: Carbon <br>
+Compound: Adonitol <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C7 
+<span class="tooltiptext">
+Well: C7 <br>
+Mainsource: Carbon <br>
+Compound: D-Glucose-6-Phosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C8 
+<span class="tooltiptext">
+Well: C8 <br>
+Mainsource: Carbon <br>
+Compound: L-Sorbose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C9 
+<span class="tooltiptext">
+Well: C9 <br>
+Mainsource: Carbon <br>
+Compound: D-Arabitol <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C10 
+<span class="tooltiptext">
+Well: C10 <br>
+Mainsource: Carbon <br>
+Compound: L-Lysine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C11 
+<span class="tooltiptext">
+Well: C11 <br>
+Mainsource: Carbon <br>
+Compound: Trehalose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C12 
+<span class="tooltiptext">
+Well: C12 <br>
+Mainsource: Carbon <br>
+Compound: Acetic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td><br>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D1 
+<span class="tooltiptext">
+Well: D1 <br>
+Mainsource: Carbon <br>
+Compound: L-Alanine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D2 
+<span class="tooltiptext">
+Well: D2 <br>
+Mainsource: Carbon <br>
+Compound: L-Arabinose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D3 
+<span class="tooltiptext">
+Well: D3 <br>
+Mainsource: Carbon <br>
+Compound: L-Threonine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D4 
+<span class="tooltiptext">
+Well: D4 <br>
+Mainsource: Carbon <br>
+Compound: 4 Hydroxy-Phenylacetate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D5 
+<span class="tooltiptext">
+Well: D5 <br>
+Mainsource: Carbon <br>
+Compound: D-Ribose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D6 
+<span class="tooltiptext">
+Well: D6 <br>
+Mainsource: Carbon <br>
+Compound: Melibiose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D7 
+<span class="tooltiptext">
+Well: D7 <br>
+Mainsource: Carbon <br>
+Compound: D-Alanine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D8 
+<span class="tooltiptext">
+Well: D8 <br>
+Mainsource: Carbon <br>
+Compound: L-Fucose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D9 
+<span class="tooltiptext">
+Well: D9 <br>
+Mainsource: Carbon <br>
+Compound: L-Asparagine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D10 
+<span class="tooltiptext">
+Well: D10 <br>
+Mainsource: Carbon <br>
+Compound: L-Leucine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D11 
+<span class="tooltiptext">
+Well: D11 <br>
+Mainsource: Carbon <br>
+Compound: D-Aspartic Acid <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D12 
+<span class="tooltiptext">
+Well: D12 <br>
+Mainsource: Carbon <br>
+Compound: Inosine <br>
+Concentration: 0.3 <br>
+</span></div></button></td><br>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E1 
+<span class="tooltiptext">
+Well: E1 <br>
+Mainsource: Carbon <br>
+Compound: Thymidine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E2 
+<span class="tooltiptext">
+Well: E2 <br>
+Mainsource: Carbon <br>
+Compound: Sucrose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E3 
+<span class="tooltiptext">
+Well: E3 <br>
+Mainsource: Carbon <br>
+Compound: D-Xylose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E4 
+<span class="tooltiptext">
+Well: E4 <br>
+Mainsource: Carbon <br>
+Compound: L-Cysteine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E5 
+<span class="tooltiptext">
+Well: E5 <br>
+Mainsource: Carbon <br>
+Compound: Alpha-D-Lactose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E6 
+<span class="tooltiptext">
+Well: E6 <br>
+Mainsource: Carbon <br>
+Compound: Raffinose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E7 
+<span class="tooltiptext">
+Well: E7 <br>
+Mainsource: Carbon <br>
+Compound: D-Asparagine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E8 
+<span class="tooltiptext">
+Well: E8 <br>
+Mainsource: Carbon <br>
+Compound: Erythritol <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E9 
+<span class="tooltiptext">
+Well: E9 <br>
+Mainsource: Carbon <br>
+Compound: D-Cysteine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E10 
+<span class="tooltiptext">
+Well: E10 <br>
+Mainsource: Carbon <br>
+Compound: L-Isoleucine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E11 
+<span class="tooltiptext">
+Well: E11 <br>
+Mainsource: Carbon <br>
+Compound: L-Cysteic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E12 
+<span class="tooltiptext">
+Well: E12 <br>
+Mainsource: Carbon <br>
+Compound: Adenosine <br>
+Concentration: 0.2 <br>
+</span></div></button></td><br>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F1 
+<span class="tooltiptext">
+Well: F1 <br>
+Mainsource: Carbon <br>
+Compound: Xylitol <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F2 
+<span class="tooltiptext">
+Well: F2 <br>
+Mainsource: Carbon <br>
+Compound: L-Glutamine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F3 
+<span class="tooltiptext">
+Well: F3 <br>
+Mainsource: Carbon <br>
+Compound: L-Rhamnose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F4 
+<span class="tooltiptext">
+Well: F4 <br>
+Mainsource: Carbon <br>
+Compound: Putrescine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F5 
+<span class="tooltiptext">
+Well: F5 <br>
+Mainsource: Carbon <br>
+Compound: 2 Deoxy-D-Ribose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F6 
+<span class="tooltiptext">
+Well: F6 <br>
+Mainsource: Carbon <br>
+Compound: L-Arabitol <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F7 
+<span class="tooltiptext">
+Well: F7 <br>
+Mainsource: Carbon <br>
+Compound: D-Glucosamine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F8 
+<span class="tooltiptext">
+Well: F8 <br>
+Mainsource: Carbon <br>
+Compound: L-Phenylalanine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F9 
+<span class="tooltiptext">
+Well: F9 <br>
+Mainsource: Carbon <br>
+Compound: D-Glutamic Acid <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F10 
+<span class="tooltiptext">
+Well: F10 <br>
+Mainsource: Carbon <br>
+Compound: D-Arabinose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F11 
+<span class="tooltiptext">
+Well: F11 <br>
+Mainsource: Carbon <br>
+Compound: L-Tryptophan <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F12 
+<span class="tooltiptext">
+Well: F12 <br>
+Mainsource: Carbon <br>
+Compound: L-Pyro-Glutamic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G1 
+<span class="tooltiptext">
+Well: G1 <br>
+Mainsource: Nitrogen <br>
+Compound: Negative Control <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G2 
+<span class="tooltiptext">
+Well: G2 <br>
+Mainsource: Nitrogen <br>
+Compound: Tyramine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G3 
+<span class="tooltiptext">
+Well: G3 <br>
+Mainsource: Nitrogen <br>
+Compound: Uridine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G4 
+<span class="tooltiptext">
+Well: G4 <br>
+Mainsource: Nitrogen <br>
+Compound: Inosine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G5 
+<span class="tooltiptext">
+Well: G5 <br>
+Mainsource: Nitrogen <br>
+Compound: Histamine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G6 
+<span class="tooltiptext">
+Well: G6 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Pyro-Glutamic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G7 
+<span class="tooltiptext">
+Well: G7 <br>
+Mainsource: Nitrogen <br>
+Compound: Cytidine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G8 
+<span class="tooltiptext">
+Well: G8 <br>
+Mainsource: Nitrogen <br>
+Compound: Adenosine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G9 
+<span class="tooltiptext">
+Well: G9 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Arginine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G10 
+<span class="tooltiptext">
+Well: G10 <br>
+Mainsource: Nitrogen <br>
+Compound: Thiourea <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G11 
+<span class="tooltiptext">
+Well: G11 <br>
+Mainsource: Nitrogen <br>
+Compound: Biuret <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G12 
+<span class="tooltiptext">
+Well: G12 <br>
+Mainsource: Nitrogen <br>
+Compound: Guanidine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H1 
+<span class="tooltiptext">
+Well: H1 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Histidine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H2 
+<span class="tooltiptext">
+Well: H2 <br>
+Mainsource: Nitrogen <br>
+Compound: Thymine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H3 
+<span class="tooltiptext">
+Well: H3 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Glutathione <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H4 
+<span class="tooltiptext">
+Well: H4 <br>
+Mainsource: Nitrogen <br>
+Compound: Allantoin <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H5 
+<span class="tooltiptext">
+Well: H5 <br>
+Mainsource: Nitrogen <br>
+Compound: Adenine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H6 
+<span class="tooltiptext">
+Well: H6 <br>
+Mainsource: Nitrogen <br>
+Compound: Glycine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H7 
+<span class="tooltiptext">
+Well: H7 <br>
+Mainsource: Nitrogen <br>
+Compound: Beta-Phenylethylamine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H8 
+<span class="tooltiptext">
+Well: H8 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Proline <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H9 
+<span class="tooltiptext">
+Well: H9 <br>
+Mainsource: Nitrogen <br>
+Compound: D-Methionine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H10 
+<span class="tooltiptext">
+Well: H10 <br>
+Mainsource: Nitrogen <br>
+Compound: Cytosine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H11 
+<span class="tooltiptext">
+Well: H11 <br>
+Mainsource: Nitrogen <br>
+Compound: D-Valine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H12 
+<span class="tooltiptext">
+Well: H12 <br>
+Mainsource: Nitrogen <br>
+Compound: N-Acetyl-D-Glucosamine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+</tr>
+</table><br><br>
+<table style="width:50%">
+<caption>Plate 2</caption>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A1 
+<span class="tooltiptext">
+Well: A1 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Glutamic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A2 
+<span class="tooltiptext">
+Well: A2 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Asparagine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A3 
+<span class="tooltiptext">
+Well: A3 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Alanine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A4 
+<span class="tooltiptext">
+Well: A4 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Methione <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A5 
+<span class="tooltiptext">
+Well: A5 <br>
+Mainsource: Nitrogen <br>
+Compound: Positive Control <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A6 
+<span class="tooltiptext">
+Well: A6 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Glutamine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A7 
+<span class="tooltiptext">
+Well: A7 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Cysteine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A8 
+<span class="tooltiptext">
+Well: A8 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Serine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A9 
+<span class="tooltiptext">
+Well: A9 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Threonine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A10 
+<span class="tooltiptext">
+Well: A10 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Leucine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A11 
+<span class="tooltiptext">
+Well: A11 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Lysine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> A12 
+<span class="tooltiptext">
+Well: A12 <br>
+Mainsource: Nitrogen <br>
+Compound: Negative Control <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B1 
+<span class="tooltiptext">
+Well: B1 <br>
+Mainsource: Nitrogen <br>
+Compound: D-Glutamic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B2 
+<span class="tooltiptext">
+Well: B2 <br>
+Mainsource: Nitrogen <br>
+Compound: D-Asparagine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B3 
+<span class="tooltiptext">
+Well: B3 <br>
+Mainsource: Nitrogen <br>
+Compound: D-Alanine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B4 
+<span class="tooltiptext">
+Well: B4 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Tryptophan <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B5 
+<span class="tooltiptext">
+Well: B5 <br>
+Mainsource: Nitrogen <br>
+Compound: D-Aspartic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B6 
+<span class="tooltiptext">
+Well: B6 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Phenylalanine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B7 
+<span class="tooltiptext">
+Well: B7 <br>
+Mainsource: Nitrogen <br>
+Compound: D-Cysteine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B8 
+<span class="tooltiptext">
+Well: B8 <br>
+Mainsource: Nitrogen <br>
+Compound: D-Serine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B9 
+<span class="tooltiptext">
+Well: B9 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Valine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B10 
+<span class="tooltiptext">
+Well: B10 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Isoleucine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B11 
+<span class="tooltiptext">
+Well: B11 <br>
+Mainsource: Nitrogen <br>
+Compound: Tyrosine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> B12 
+<span class="tooltiptext">
+Well: B12 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Citrulline <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C1 
+<span class="tooltiptext">
+Well: C1 <br>
+Mainsource: Nitrogen <br>
+Compound: L-Ornithine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C2 
+<span class="tooltiptext">
+Well: C2 <br>
+Mainsource: Nitrogen <br>
+Compound: Putrescine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C3 
+<span class="tooltiptext">
+Well: C3 <br>
+Mainsource: Nitrogen <br>
+Compound: D-Glucosamine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C4 
+<span class="tooltiptext">
+Well: C4 <br>
+Mainsource: Nitrogen <br>
+Compound: 2-Deoxy-D-Ribose <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C5 
+<span class="tooltiptext">
+Well: C5 <br>
+Mainsource: Nitrogen <br>
+Compound: Thymidine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C6 
+<span class="tooltiptext">
+Well: C6 <br>
+Mainsource: Nitrogen <br>
+Compound: Acetamide <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C7 
+<span class="tooltiptext">
+Well: C7 <br>
+Mainsource: Nitrogen <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C8 
+<span class="tooltiptext">
+Well: C8 <br>
+Mainsource: Nitrogen <br>
+Compound: Blank 15 <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C9 
+<span class="tooltiptext">
+Well: C9 <br>
+Mainsource: Nitrogen <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C10 
+<span class="tooltiptext">
+Well: C10 <br>
+Mainsource: Nitrogen <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C11 
+<span class="tooltiptext">
+Well: C11 <br>
+Mainsource: Nitrogen <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> C12 
+<span class="tooltiptext">
+Well: C12 <br>
+Mainsource: Nitrogen <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D1 
+<span class="tooltiptext">
+Well: D1 <br>
+Mainsource: Sulfur <br>
+Compound: Negative Control <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D2 
+<span class="tooltiptext">
+Well: D2 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D3 
+<span class="tooltiptext">
+Well: D3 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D4 
+<span class="tooltiptext">
+Well: D4 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D5 
+<span class="tooltiptext">
+Well: D5 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D6 
+<span class="tooltiptext">
+Well: D6 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D7 
+<span class="tooltiptext">
+Well: D7 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D8 
+<span class="tooltiptext">
+Well: D8 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D9 
+<span class="tooltiptext">
+Well: D9 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D10 
+<span class="tooltiptext">
+Well: D10 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D11 
+<span class="tooltiptext">
+Well: D11 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> D12 
+<span class="tooltiptext">
+Well: D12 <br>
+Mainsource: Sulfur <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E1 
+<span class="tooltiptext">
+Well: E1 <br>
+Mainsource: Sulfur <br>
+Compound: L-Methionine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E2 
+<span class="tooltiptext">
+Well: E2 <br>
+Mainsource: Sulfur <br>
+Compound: L-Cysteine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E3 
+<span class="tooltiptext">
+Well: E3 <br>
+Mainsource: Sulfur <br>
+Compound: L-Cysteic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E4 
+<span class="tooltiptext">
+Well: E4 <br>
+Mainsource: Sulfur <br>
+Compound: Glutathione <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E5 
+<span class="tooltiptext">
+Well: E5 <br>
+Mainsource: Sulfur <br>
+Compound: Thiourea <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E6 
+<span class="tooltiptext">
+Well: E6 <br>
+Mainsource: Sulfur <br>
+Compound: L-Djenkolic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E7 
+<span class="tooltiptext">
+Well: E7 <br>
+Mainsource: Sulfur <br>
+Compound: Acetyl Cysteine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E8 
+<span class="tooltiptext">
+Well: E8 <br>
+Mainsource: Sulfur <br>
+Compound: 1-Butane-Sulfonic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E9 
+<span class="tooltiptext">
+Well: E9 <br>
+Mainsource: Sulfur <br>
+Compound: Taurocholic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E10 
+<span class="tooltiptext">
+Well: E10 <br>
+Mainsource: Sulfur <br>
+Compound: Potassium-Tetra-Thionate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E11 
+<span class="tooltiptext">
+Well: E11 <br>
+Mainsource: Sulfur <br>
+Compound: Magnesium Sulfate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> E12 
+<span class="tooltiptext">
+Well: E12 <br>
+Mainsource: Sulfur <br>
+Compound: Diethyl-Dithiophosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F1 
+<span class="tooltiptext">
+Well: F1 <br>
+Mainsource: Sulfur <br>
+Compound: D-Methionine <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F2 
+<span class="tooltiptext">
+Well: F2 <br>
+Mainsource: Sulfur <br>
+Compound: D-Cysteine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F3 
+<span class="tooltiptext">
+Well: F3 <br>
+Mainsource: Sulfur <br>
+Compound: Isethionic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F4 
+<span class="tooltiptext">
+Well: F4 <br>
+Mainsource: Sulfur <br>
+Compound: Sulfanic Acid <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F5 
+<span class="tooltiptext">
+Well: F5 <br>
+Mainsource: Sulfur <br>
+Compound: DL-Alpha-Amino-N-Butyric Acid <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F6 
+<span class="tooltiptext">
+Well: F6 <br>
+Mainsource: Sulfur <br>
+Compound: Sodium Thiosulfate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F7 
+<span class="tooltiptext">
+Well: F7 <br>
+Mainsource: Sulfur <br>
+Compound: DL-Ethionine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F8 
+<span class="tooltiptext">
+Well: F8 <br>
+Mainsource: Sulfur <br>
+Compound: N-Acetyl-DL-Methionine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F9 
+<span class="tooltiptext">
+Well: F9 <br>
+Mainsource: Sulfur <br>
+Compound: Methane Sulfonic Acid <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F10 
+<span class="tooltiptext">
+Well: F10 <br>
+Mainsource: Sulfur <br>
+Compound: Gamma-Amino-N-Butyric Acid <br>
+Concentration: 0.2 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F11 
+<span class="tooltiptext">
+Well: F11 <br>
+Mainsource: Sulfur <br>
+Compound: Taurine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> F12 
+<span class="tooltiptext">
+Well: F12 <br>
+Mainsource: Sulfur <br>
+Compound: N-Acetyl-L-Cysteine <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G1 
+<span class="tooltiptext">
+Well: G1 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G2 
+<span class="tooltiptext">
+Well: G2 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G3 
+<span class="tooltiptext">
+Well: G3 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G4 
+<span class="tooltiptext">
+Well: G4 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G5 
+<span class="tooltiptext">
+Well: G5 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G6 
+<span class="tooltiptext">
+Well: G6 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G7 
+<span class="tooltiptext">
+Well: G7 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G8 
+<span class="tooltiptext">
+Well: G8 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G9 
+<span class="tooltiptext">
+Well: G9 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G10 
+<span class="tooltiptext">
+Well: G10 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G11 
+<span class="tooltiptext">
+Well: G11 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> G12 
+<span class="tooltiptext">
+Well: G12 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+</tr>
+<tr>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H1 
+<span class="tooltiptext">
+Well: H1 <br>
+Mainsource: Phosphorus <br>
+Compound: Negative Control <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H2 
+<span class="tooltiptext">
+Well: H2 <br>
+Mainsource: Phosphorus <br>
+Compound: Diethyl-Dithiophosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H3 
+<span class="tooltiptext">
+Well: H3 <br>
+Mainsource: Phosphorus <br>
+Compound: D-Glucose-6-Phosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H4 
+<span class="tooltiptext">
+Well: H4 <br>
+Mainsource: Phosphorus <br>
+Compound: Adenosine-5-Monophoshate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H5 
+<span class="tooltiptext">
+Well: H5 <br>
+Mainsource: Phosphorus <br>
+Compound: Sodium Pyrophosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H6 
+<span class="tooltiptext">
+Well: H6 <br>
+Mainsource: Phosphorus <br>
+Compound: Sodium Thiophosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H7 
+<span class="tooltiptext">
+Well: H7 <br>
+Mainsource: Phosphorus <br>
+Compound: Potassium phosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H8 
+<span class="tooltiptext">
+Well: H8 <br>
+Mainsource: Phosphorus <br>
+Compound: DL-Alpha-Glycerophosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H9 
+<span class="tooltiptext">
+Well: H9 <br>
+Mainsource: Phosphorus <br>
+Compound: Creatinephosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H10 
+<span class="tooltiptext">
+Well: H10 <br>
+Mainsource: Phosphorus <br>
+Compound: Beta-Glycerophosphate <br>
+Concentration: 0.3 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H11 
+<span class="tooltiptext">
+Well: H11 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+<td><button class="w3-button w3-large w3-circle w3-grey button5"><div class="tooltip"> H12 
+<span class="tooltiptext">
+Well: H12 <br>
+Mainsource: Phosphorus <br>
+Compound: Blank <br>
+Concentration: 0.0 <br>
+</span></div></button></td>
+</tr>
+</table>
+</body>
+</html>
