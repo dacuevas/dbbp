@@ -2,7 +2,7 @@
 // Load login info
 require "dbbp_mysql_config.php";
 
-$ret = array("data" => array());
+$ret = ["data" => []];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -28,16 +28,18 @@ if(strpos($bid, ',') !== false) {
 }
 
 //--------------- SQL STATEMENT------------------
-$sql = "SELECT * FROM GrowthParameters WHERE (";
+$sql = "SELECT Sample.Name, Experiment.ReplicateID, GrowthResults.Well, Plate.Mainsource, Plate.Compound, GrowthResults.MaxGrowthRate, GrowthResults.Asymptote, GrowthResults.Lag, GrowthResults.GrowthLevel, GrowthResults.MSE, GrowthResults.ExperimentID, GrowthResults.Name, GrowthResults.Well FROM (((Experiment INNER JOIN Sample ON Experiment.SampleID = Sample.SampleID) INNER JOIN GrowthResults ON Experiment.ExperimentID = GrowthResults.ExperimentID) INNER JOIN Plate ON GrowthResults.Name = Plate.Name AND GrowthResults.Well = Plate.Well) WHERE (";
 
 foreach ($bid as $key => $value) {
-	$sql .= "BacteriaID='$value'";
+	$sql .= "Sample.Name='$value'";
 	
 	if( $key != (sizeof($bid)-1) ) {
 		$sql .= " OR ";
 	}
 }
-$sql .= ") AND Mainsource='$msource' AND Compound='$cpound' ";
+$sql .= ") AND Plate.Mainsource='$msource' AND Plate.Compound='$cpound' ";
+
+echo $sql;
 
 // //----------- EXTRACTING FROM DATABASE -------------
 $result = $conn->query($sql);

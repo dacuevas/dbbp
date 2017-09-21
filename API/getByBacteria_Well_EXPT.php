@@ -33,10 +33,10 @@ if(strpos($well, ',') !== false) {
 	$well = array($well);	
 }
 //--------------- SQL STATEMENT------------------
-$sql = "SELECT * FROM Experiment WHERE (";
+$sql = "SELECT Sample.Name, Experiment.ReplicateID, Plate.Mainsource, Plate.Compound, OD.Well, Experiment.Date, OD.Plate, OD.time, OD.od FROM (((Experiment INNER JOIN Sample ON Experiment.SampleID = Sample.SampleID) INNER JOIN OD ON Experiment.ExperimentID = OD.ExperimentID) INNER JOIN Plate ON OD.Plate = Plate.Name AND OD.Well = Plate.Well) WHERE (";
 
 foreach ($bid as $key => $value) {
-	$sql .= "BacteriaID='$value'";
+	$sql .= "Sample.Name='$value'";
 	
 	if( $key != (sizeof($bid)-1) ) {
 		$sql .= " OR ";
@@ -45,7 +45,7 @@ foreach ($bid as $key => $value) {
 $sql .=") AND (";
 
 foreach ($well as $key => $value) {
-	$sql .= "Well='$value'";
+	$sql .= "Plate.Well='$value'";
 	
 	if( $key != (sizeof($well)-1) ) {
 		$sql .= " OR ";
