@@ -11,45 +11,36 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
  
+ /*$column is the textbox that is being typed in*/
 $column = $_REQUEST["r"];
+$array = [];
 
- if ($column == "Table") {
-	$sql = "SHOW TABLES FROM Data";
-	$result = $conn->query($sql);
-	while ($row = $result->fetch_assoc()) {
-        	array_push($array,$row["Tables_in_data"]);
-        }
-} else {
-
-//---------------------------- Plates doesn't have BacteriaIDs
- if ($column != "BacteriaID") { 
- 	$sql = "SELECT DISTINCT $column FROM Plates";
+/*BacteriaID textbox is being typed in*/
+ if ($column == "Name") { 
+ 	$sql = "SELECT DISTINCT $column FROM Sample";
  	$result = $conn->query($sql);
  	while ($row = $result->fetch_assoc()) {
          	array_push($array, $row["$column"]);
          }
    }
- //-----------------------------
- 
- $sql = "SELECT DISTINCT $column FROM GrowthParameters";
+
+/*Mainsource textbox is being typed in*/
+ elseif ($column == "Mainsource") {
+ $sql = "SELECT DISTINCT $column FROM Plate";
  $result = $conn->query($sql);
  while ($row = $result->fetch_assoc()) {
          	array_push($array, $row["$column"]);
          }
- 
- $sql = "SELECT DISTINCT $column FROM Experiment";
+    }
+
+/*Compound textbox is being typed in*/ 
+ elseif ($column == "Compound") {
+ $sql = "SELECT DISTINCT $column FROM Plate";
  $result = $conn->query($sql);
  while ($row = $result->fetch_assoc()) {
          	array_push($array, $row["$column"]);
          }
-    
-$sql = "SELECT DISTINCT $column FROM Bacteria";
-$result = $conn->query($sql);
-while ($row = $result->fetch_assoc()) {
-        	array_push($array, $row["$column"]);
-        }   
- 
- } //-----end of else-----
+    }
      
 $distinct = array_values(array_unique($array));
 
@@ -85,7 +76,15 @@ if ($q !== "") {
 	}
 }
 
+
 //output "no suggestion" if no hint was found
+// $type = $_REQUEST["type"];
+// if ($type == "raw") {
+//     echo $hint1 === "" ? "no suggestion" : $hint1;
+// } else {
+//   echo $hint2 === "" ? "no suggestion" : $hint2;  
+// }
+
 echo $hint === "" ? "no suggestion" : $hint;
-        
+
 ?>
