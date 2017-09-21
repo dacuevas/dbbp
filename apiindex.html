@@ -8,14 +8,22 @@
 	<link href="assets/style.css" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet" />
 </head>
-
 <body>
 <header><h1>DataBase of Bacterial Phenotypes</h1></header>
 
 <nav>
 <ul id="navtabs">
-	<li value="tables"><a href="indext.html">Tables</li></a>
-	<li value="api"><a href="apiindex.html" class="active">API</li></a>
+	<li value="home"><a href="homepage.html">Home</li></a>
+	<li value="tables"><a href="tablesindex.html">Tables</li></a>
+	<li value="api">
+		<a href="javascript:void(0)" class="mdropbtn" onclick="myFunction()">API</a>
+		<ul><div class="menudrop-content" id="mymenudrop">
+      		<li class="nav-api-list"><a href="#bacteria">Bacteria</a></li>
+      		<li class="nav-api-list"><a href="#experiment">Experiment</a></li>
+      		<li class="nav-api-list"><a href="#growthparameters">Growth Parameters</a></li>
+      		<li class="nav-api-list"><a href="#plates">Plates</a></li>
+		</div></ul>
+	</li>
 	<li value="github"><a href="https://github.com/dacuevas/dbbp" target="_blank">GitHub</li></a>
 	<li value="lab"><a href="https://edwards.sdsu.edu/research/" target="_blank">Lab</li></a>
 </ul>
@@ -24,47 +32,280 @@
 <section>
 	<div id="apisection">
 		<h1> API </h1>
-		<h3>These four PHP scripts uniquely extract data from the database by Bacteria ID(s), as well as other parameters when specified, then returns results in the form of a JSON object.</h3>
-		<h4><a href="API_phps/getByBacteriaGP.php" class="active" target="_blank">getByBacteriaGP.php </h4></a>
-		<body> To access data from the Growth Parameters table, simply click on the script link above,  in the address box after <font face="Andale Mono, Courier">getByBacteriaGP.php</font>, add 
-			 <font face="Andale Mono, Courier">?bid="id1,id2,id3"</font>  
-			 where the Bacteria IDs are within double quotations and separated by a comma. One Bacteria ID is sufficient, omit any commas. Capitalization is unnecessary. 
-			 <br/><br/>
-			 Example:<br/>
-			 	<font face="Andale Mono, Courier">getByBacteriaGP.php?bid="ed002,ed007"</font> <br/>OR <br/>
-			 	<font face="Andale Mono, Courier">getByBacteriaGP.php?bid="ed002"</font></body>
-		
-		<h4><a href="API_phps/getByBacteriaEXPT.php" class="active" target="_blank">getByBacteriaEXPT.php </h4></a>
-		<body> To access data from the Experiment table, simply click on the script link above,  in the address box after <font face="Andale Mono, Courier">getByBacteriaEXPT.php</font>, add 
-			 <font face="Andale Mono, Courier">?bid="id1,id2,id3"</font>  
-			 where the Bacteria IDs are within double quotations and separated by a comma. One Bacteria ID is sufficient, omit any commas. Capitalization is unnecessary. 
-			 <br/><br/>
-			 Example:<br/>
-			 	<font face="Andale Mono, Courier">getByBacteriaEXPT.php?bid="ed002,ed007"</font> <br/>OR <br/>
-			 	<font face="Andale Mono, Courier">getByBacteriaEXPT.php?bid="ed002"</font></body>
-		
-		<h4><a href="API_phps/getByBacteria_MC_GP.php" class="active" target="_blank">getByBacteria_MC_GP.php </h4></a>
-		<body> To access data from the Growth Parameters table by Bacteria ID, as well as, Main Source and/or Compound, simply click on the script link above.  In the address box after <font face="Andale Mono, Courier">getByBacteria_MC_GP.php</font>, add 
-			 <font face="Andale Mono, Courier">?bid="id1,id2,id3"&ms="mainsource"&cp="compound"</font>  
-			 where the Bacteria IDs, Main Source and/or Compound are within their respective double quotations. One Bacteria ID is sufficient, if multiple, separate with commas. Capitalization is unnecessary. 
-			 <br/><br/>
-			 Example:<br/>
-			 	<font face="Andale Mono, Courier">getByBacteria_MC_GP.php?bid="ed002,ed007"&ms="carbon"&cp="propionate"</font> <br/>OR <br/>
-			 	<font face="Andale Mono, Courier">getByBacteria_MC_GP.php?bid="ed002"&ms="carbon"&cp="propionate"</font></body>
-			 	
-		<h4><a href="API_phps/getByBacteria_MC_EXPT.php" class="active" target="_blank">getByBacteria_MC_EXPT.php </h4></a>
-		<body> To access data from the Experiment table by Bacteria ID, as well as, Main Source and/or Compound, simply click on the script link above.  In the address box after <font face="Andale Mono, Courier">getByBacteria_MC_EXPT.php</font>, add 
-			 <font face="Andale Mono, Courier">?bid="id1,id2,id3"&ms="mainsource"&cp="compound"</font>  
-			 where the Bacteria IDs, Main Source and/or Compound are within their respective double quotations. One Bacteria ID is sufficient, if multiple, separate with commas. Capitalization is unnecessary. 
-			 <br/><br/>
-			 Example:<br/>
-			 	<font face="Andale Mono, Courier">getByBacteria_MC_EXPT.php?bid="ed002,ed007"&ms="carbon"&cp="propionate"</font> <br/>OR <br/>
-			 	<font face="Andale Mono, Courier">getByBacteria_MC_EXPT.php?bid="ed002"&ms="carbon"&cp="propionate"</font></body>
-			 	<br/><br/>
+		<h2 style="color:#bc2121" id="bacteria">Bacteria</h2>
+		<h2 style="color:#bc2121" id="experiment">Experiment</h2>
+<h3>Description</h3>
+				<p>A JSON object from the Experiment table is returned based on specific parameters searched.</p>
+			<h3>Search by - bacteria</h3>
+				<h4>Description</h4>
+					<p>Returns Experiment data based on bacteria names/IDs specified.</p>
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>bacteria</b>  (string) 
+						<br>unique bacteria identification</li>						
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">getByBacteriaEXPT.php?bid="ed002,ed007"</li>
+					<a href="API_phps/getByBacteriaEXPT.php"  target="_blank" >getByBacteriaEXPT.php</a>					
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>BacteriaID</b>  (string) 
+						<br>unique bacteria identification</li><br>
+					<li class="lower"><b>ReplicateID</b> (string)
+						<br>	Number or letter to distinguish replicate results</li><br>
+					<li class="lower"><b>Mainsource</b> (string)
+						<br>	Either carbon, nitrogen, phosphorus</li><br>					
+					<li class="lower"><b>Compound</b> (string)
+						<br>	Type of substance in that well</li><br>					
+						<li class="lower"><b>Well</b> (string)
+						<br>	Specified well</li><br>
+					<li class="lower"><b>Date</b> (float)
+						<br>	Date of when experiment was conducted (if recorded). </li><br>
+					<li class="lower"><b>Plate</b> (float)
+						<br>	Plate name where compound and substance is located.</li><br>
+					<li class="lower"><b>Time</b> (float)
+						<br>	Time when experiment was conducted.</li><br>
+					<li class="lower"><b>OD</b> (float)
+						<br>	Optical Density</li><br>
+				</ol>
+			<h3>Search by - bacteria, mainsource, compound</h3>
+			<h4>Description</h4>
+					<p>Returns the Experiment table data based on bacteria name(s), a single mainsource, and a single compound specification.</p>
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>bacteria</b>  (string) 
+						<br>unique bacteria identification</li><br>
+					<li class="lower"><b>mainsource</b> (string)
+						<br>	carbon, nitrogen, phosphorus</li><br>
+					<li class="lower"><b>compound</b> (string)
+						<br>	a variety of substances</li>						
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">getByBacteria_MC_EXPT.php?bid="ed002,ed007"&ms="carbon"&cp="propionate"</li>
+					<a href="API_phps/getByBacteria_MC_EXPT.php"  target="_blank" >getByBacteria_MC_EXPT.php</a>
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">  See Return Attributes under "Search by - bacteria" under Experiment</li>
+				</ol>	
+			<h3>Search by - bacteria, well</h3>
+				<h4>Description</h4>
+					<p>Returns the Experiment table data based on bacteria name(s) and well(s) specified.</p>		
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>bacteria</b>  (string) 
+						<br>unique bacteria identification</li><br>
+					<li class="lower"><b>well</b> (string)
+						<br>	[A-H][1-12]  i.e. D7 </li>					
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">getByBacteria_Well_EXPT.php?bid="ed002,ed007"&well="d7"</li>
+					<a href="API_phps/getByBacteria_Well_EXPT.php"  target="_blank" >getByBacteria_Well_EXPT.php</a>
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">  See Return Attributes under "Search by - bacteria" under Experiment</li>
+				</ol>
+<!-- 			<h3>Search by - growth class</h3>
+				<h4>Description</h4>
+					<p>Returns corresponding Experiment table data based on specified Growth Class from the Growth Parameters table.</p>
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>growth class</b>  (string) 
+						<br>A number, 0-4, 0 being least amount of growth and 4 being maximum growth.</li>					 
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">getByGrowthClass_EXPT.php?gclass="2"</li>
+					<a href="API_phps/getByGrowthClass_EXPT.php"  target="_blank" >getByGrowthClass_EXPT.php</a>
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">  See Return Attributes under "Search by - bacteria" under Experiment</li>
+				</ol>	-->							
+		<h2 style="color:#bc2121" id="growthparameters">Growth Parameters</h2>
+		<h3>Description</h3>
+				<p>A JSON object from Growth Parameters table is returned based on specific parameters searched.</p>
+			<h3>Search by - bacteria</h3>
+				<h4>Description</h4>
+					<p>Returns Growth Parameter data based on bacteria names/IDs specified.</p>
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>bacteria</b>  (string) 
+						<br>unique bacteria identification</li>						
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">getByBacteriaGP.php?bid="ed002,ed007"</li>
+					<a href="API_phps/getByBacteriaGP.php"  target="_blank" >getByBacteriaGP.php</a>					
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>BacteriaID</b>  (string) 
+						<br>unique bacteria identification</li><br>
+					<li class="lower"><b>ReplicateID</b> (string)
+						<br>	Number or letter to distinguish replicate results</li><br>
+					<li class="lower"><b>Well</b> (string)
+						<br>	Specified well</li><br>
+					<li class="lower"><b>Mainsource</b> (string)
+						<br>	Either carbon, nitrogen, phosphorus</li><br>
+					<li class="lower"><b>Compound</b> (string)
+						<br>	Type of substance in that well</li><br>
+					<li class="lower"><b>Max_Growth_Rate</b> (float)
+						<br>	Type of substance in that well</li><br>
+					<li class="lower"><b>Asymptote</b> (float)
+						<br>	Type of substance in that well</li><br>
+					<li class="lower"><b>Lag</b> (float)
+						<br>	Type of substance in that well</li><br>
+					<li class="lower"><b>Growth_Level</b> (float)
+						<br>	Type of substance in that well</li><br>
+					<li class="lower"><b>Logistic_MSE</b> (float)
+						<br>	Type of substance in that well</li><br>
+					<li class="lower"><b>ExperimentID</b> (int)
+						<br>	Unique identification number corresponsing to Experiment table</li><br>
+					<li class="lower"><b>Plate Name</b> (string)
+						<br>	Name of the Plate bacteria is from.</li><br>				
+				</ol>
+			<h3>Search by - bacteria, well</h3>
+				<h4>Description</h4>
+					<p>Returns Growth Parameter data based on bacteria name(s) and well(s) specified.</p>		
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>bacteria</b>  (string) 
+						<br>unique bacteria identification</li><br>
+					<li class="lower"><b>well</b> (string)
+						<br>	[A-H][1-12]  i.e. D7 </li>					
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">getByBacteria_Well_GP.php?bid="ed002,ed007"&well="d7"</li>
+					<a href="API_phps/getByBacteria_Well_GP.php"  target="_blank" >getByBacteria_Well_GP.php</a>
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">  See Return Attributes under "Search by - bacteria" under Growth Parameters</li>
+				</ol>			
+			<h3>Search by - bacteria, mainsource, compound</h3>
+			<h4>Description</h4>
+					<p>Returns Growth Parameter data based on bacteria name(s), a single mainsource, and a single compound specification.</p>
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>bacteria</b>  (string) 
+						<br>unique bacteria identification</li><br>
+					<li class="lower"><b>mainsource</b> (string)
+						<br>	carbon, nitrogen, phosphorus</li><br>
+					<li class="lower"><b>compound</b> (string)
+						<br>	a variety of substances</li>						
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">getByBacteria_MC_GP.php?bid="ed002,ed007"&ms="carbon"&cp="propionate"</li>
+					<a href="API_phps/getByBacteria_MC_GP.php"  target="_blank" >getByBacteria_MC_GP.php</a>
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">  See Return Attributes under "Search by - bacteria" under Growth Parameters</li>
+				</ol>
+<!-- 			<h3>Search by - growth class</h3>
+				<h4>Description</h4>
+					<p>Returns Growth Parameter data based on specified Growth Class.</p>
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>growth class</b>  (string) 
+						<br>A number, 0-4, 0 being least amount of growth and 4 being maximum growth.</li>					
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">getByGrowthClass_GP.php?gclass="2"</li>
+					<a href="API_phps/getByGrowthClass_GP.php"  target="_blank" >getByGrowthClass_GP.php</a>
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">  See Return Attributes under "Search by - bacteria" under Growth Parameters</li>
+				</ol> -->
+			<h3>Search by - growth level (greater than or equal to)</h3>
+				<h4>Description</h4>
+					<p>Returns Growth Parameter data greater than or equal to specified Growth Level.</p>
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>growth level</b>  (float) 
+						<br>A number, -2 to 2, indicating the growth level.</li>					
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">gteGrowthLevel_GP.php?glevel="1"</li>
+					<a href="API_phps/gteGrowthLevel_GP.php"  target="_blank" >gteGrowthLevel_GP.php</a>
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">  See Return Attributes under "Search by - bacteria" under Growth Parameters</li>
+				</ol>					
+			<h3>Search by - max growth rate (greater than or equal to)</h3>
+				<h4>Description</h4>
+					<p>Returns Growth Parameter data greater than or equal to specified Max Growth Rate.</p>
+			<h4>Parameter(s)</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower"><b>max growth rate</b>  (float) 
+						<br>A range of numbers representing the rate of growth.</li>					
+				</ol>
+			<h4>Example</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">gteMaxGrowthRate_GP.php?maxgr="1"</li>
+					<a href="API_phps/gteMaxGrowthRate_GP.php"  target="_blank" >gteMaxGrowthRate_GP.php</a>
+				</ol>
+			<h4>Return Attributes</h4>
+				<ol style="list-style-type:disc">
+					<li class="lower">  See Return Attributes under "Search by - bacteria" under Growth Parameters</li>
+				</ol>										
+					<h2 style="color:#bc2121" id="plates">Plates</h2>
+					 	<br/><br/>
 	</div> <!-- apisection div end-->
 </section>
 
 <footer>Edwards Lab</footer>
 
 </body>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("mymenudrop").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.mdropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("menudrop-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<style>
+.menudrop-content {
+	display:none;
+}
+.show {display:block;}
+
+.nav-api-list {
+	text-indent: 20px;	
+	font-size: small;
+}
+.lower {
+    font-size: 90%;   
+}
+h3, h4 {
+	margin: 0;	
+}
+</style>
+
 </html>
