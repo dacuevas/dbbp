@@ -30,7 +30,7 @@ nav {
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: bold;
 	line-height:30px;
-    background-color:#eeeeee;
+    background-color:#eeeeee; /*light grey-white*/
     height:1000px;
     width:200px;
     float:left;
@@ -49,21 +49,22 @@ ul {
 }
 li a {
     display: block;
-    color: #000;
+    color: #000; /*black*/
     padding: 8px 0 8px 16px;
     text-decoration: none;
     width: 184px;
 }
-li a.active {
+li a.active, .mdropbtn {
     background-color: navy;
     color: white;
     width:184px;
 }
-li a:hover:not(.active) {
-    background-color: rgb(128,128,128);
+li a:hover {
+    background-color: #808080; /*dark grey*/
     color: white;
     width: 184px;
 }
+
 /*  ------------- END OF PAGE LAYOUT STYLING ---------- */
 
 /* ---------- DATA SEARCH CHARACTERISTICS ---------  */
@@ -133,3 +134,8 @@ select {
 	width: 200px;
 }
 /* ---------- END OF DROPDOWN STYLING --------- */
+
+/*  ----------- API PAGE STYLING  -------- */
+
+
+/*  ----------- END OF API PAGE STYLING  -------- */

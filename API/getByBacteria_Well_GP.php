@@ -1,5 +1,5 @@
 <?php
-// Load login info
+//Load login info
 require "dbbp_mysql_config.php";
 
 $ret = array("data" => array());
@@ -33,10 +33,10 @@ if(strpos($well, ',') !== false) {
 	$well = array($well);	
 }
 //--------------- SQL STATEMENT------------------
-$sql = "SELECT * FROM GrowthParameters WHERE (";
+$sql = "SELECT Sample.Name, Experiment.ReplicateID, GrowthResults.Well, Plate.Mainsource, Plate.Compound, GrowthResults.MaxGrowthRate, GrowthResults.Asymptote, GrowthResults.Lag, GrowthResults.GrowthLevel, GrowthResults.MSE, GrowthResults.ExperimentID, GrowthResults.Name, GrowthResults.Well FROM (((Experiment INNER JOIN Sample ON Experiment.SampleID = Sample.SampleID) INNER JOIN GrowthResults ON Experiment.ExperimentID = GrowthResults.ExperimentID) INNER JOIN Plate ON GrowthResults.Name = Plate.Name AND GrowthResults.Well = Plate.Well) WHERE (";
 
 foreach ($bid as $key => $value) {
-	$sql .= "BacteriaID='$value'";
+	$sql .= "Sample.Name='$value'";
 	
 	if( $key != (sizeof($bid)-1) ) {
 		$sql .= " OR ";
@@ -45,7 +45,7 @@ foreach ($bid as $key => $value) {
 $sql .=") AND (";
 
 foreach ($well as $key => $value) {
-	$sql .= "Well='$value'";
+	$sql .= "Plate.Well='$value'";
 	
 	if( $key != (sizeof($well)-1) ) {
 		$sql .= " OR ";

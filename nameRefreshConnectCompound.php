@@ -1,15 +1,16 @@
+
 <?php
 // Load login info
 require "dbbp_mysql_config.php";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $database);
 
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$search = "SELECT DISTINCT Compound FROM Plates";
+$search = "SELECT DISTINCT Compound FROM Plate";
 $sql = $search;
 $result = mysqli_query($conn, $sql);
 $compounds = array();
@@ -33,5 +34,5 @@ foreach ($final as $name) {
 	echo "<option> $name </option>";
 }
 
-mysqli_close($conn);
+msqli_close($conn);
 ?>
