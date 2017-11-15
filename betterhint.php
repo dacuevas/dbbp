@@ -45,7 +45,8 @@ $array = [];
 $distinct = array_values(array_unique($array));
 
 function cmp($a, $b){
-    return strcmp($a["value"], $b["value"]);
+    #return strcmp($a["value"], $b["value"]);
+    return strcmp($a, $b);
 }
 
 //FINAL SORTED ARRAY
