@@ -2,7 +2,7 @@
 // Load login info
 require "dbbp_mysql_config.php";
 
-$ret = ["data" => [] , "header" => [], "count" => []];
+$ret = array("data" => array(), "header" => array(), "count" => array());
 // $head = array();
 
 // Create connection
