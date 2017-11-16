@@ -8,97 +8,67 @@
 	<script src="assets/script.js" type="text/javascript"></script>
 	<link href="assets/style.css" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- --------------------------END ------------------------	 -->
-<script>
-function showHint(str, col) {
-    if (str.length == 0) { 
-        document.getElementById("hint").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("hint").innerHTML = xmlhttp.responseText;
-            }
-        };
-        xmlhttp.open("GET", "betterhint.php?q=" + str + "&r=" + col, true);
-        xmlhttp.send();
-    }
-}      
-</script>
+<!-- 	<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js"></script>-->
 </head>
 <body>
 <header><h1>DataBase of Bacterial Phenotypes</h1></header>
 
 <nav>
 <ul id="navtabs">
-	<li value="tables"><a class="active" href="index.html">Tables</li></a>
+	<li value="home"><a class="active" href="index.html">Home</li></a>
+	<li value="tables"><a href="tablesindex.html">Tables</li></a>
 	<li value="api" id="api"><a href="apiindex.html">API</li></a>
-	<li value="github"><a href="https://github.com/dacuevas/dbbp" target="_blank">GitHub</li></a>
-	<li value="lab"><a href="https://edwards.sdsu.edu/research/" target="_blank">Lab</li></a>
+	<li value="github"><a href="https://github.com/dacuevas/dbbp" target="_blank">GitHub &nbsp &nbsp<i class="fa fa-external-link" aria-hidden="true"></i></li></a>
+	<li value="lab"><a href="https://edwards.sdsu.edu/research/" target="_blank">Lab &nbsp &nbsp<i class="fa fa-external-link" aria-hidden="true"></i></li></a>
 </ul>
 </nav>
 
 <section>
-<div id="tables">
-<h1>Tables</h1>
-<div id="datasearch">
-<h2>Data Search:</h2>
-<form>
-	<label for="table">Table:</label><label for="table" id="star" style="color:red">*</label>
-	<input type="text" id="table" name="table" onkeyup="showHint(this.value, 'Table')" required></input>
-	<label for="sample">BacteriaID:</label>
-	<input type="text" id="bacteriaid" name="bacteriaid" onkeyup="showHint(this.value, 'BacteriaID')"></input>
-	<label for="mainsource">Mainsource:</label>
-	<input type="text" id="mainsource" name="mainsource" onkeyup="showHint(this.value, 'Mainsource')"></input>
-	<label for="compound">Compound:</label>
-	<input type="text" id="compound" name="compound" onkeyup="showHint(this.value, 'Compound')"></input><br>
-	<p id="requirement" style="font-size:90%; color:red;">* Required</p><br>
-	<p id="suggestions" style="margin-top: -10px;"> Suggestions: <span id="hint"></span></p>
-	<button class="button" id="searchbtn" name="searchbtn" onclick="searchTable(); return false;">Search</button>
-</form>
-</div> <!-- datasearch div end -->
-<br>
-<br>
-<br>
-<div id="infolists">
-<h2>Information Lists:</h2>
-<form class = "dropitems">
-	<select data = "data" id = "mainsourceSelect">
-		<!-- filled in by php -->
-	</select>
-</form>
+<div id="main">
+<h1>Welcome to DBBP</h1>
+<p>
+The Database of Bacterial Phenotypes provides access to phenotypic growth data and genome-scale metabolic models for various bacterial species.
+</p>
+<table id="hp_tab">
+    <tr>
+        <td>
+            <h3>
+                RAW DATA
+            </h3>
+            <i class="fa fa-database fa-5x" aria-hidden="true"></i>
+            <p>
+                Explore our repository of raw growth curve data generated from spectrophotometer experiments measuring absorbance @ OD 600nm.
+            </p>
+        </td>
+        <td>
+            <h3>
+                GROWTH RESULTS
+            </h3>
+            <i class="fa fa-line-chart fa-5x" aria-hidden="true"></i>
+            <p>
+                Browse through sets of growth curve analysis results generated using our in-house
+                <a href="https://edwards.sdsu.edu/pmanalyzer/" target="_blank"><i>PMAnalyzer</i></a> pipeline.
+            </p>
+        </td>
+        <td>
+            <h3>
+                API ACCESS
+            </h3>
+            <i class="fa fa-cloud-download fa-5x" aria-hidden="true"></i>
+            <p>
+                Programmatically and easily access DBBP using our application programming interface [API].
+            </p>
+        </td>
+    </tr>
+</table>
+</div>
 
-<form class = "dropitems">
-	<select data = "data" id = "plateSelect" >
-		<!-- filled in by php -->		
-	</select>
-</form>
-
-<form class = "dropitems">
-	<select data = "data" id = "compoundSelect">
-		<!-- filled in by php -->		
-	</select>
-</form>
-</div> <!-- inforsearch div end-->
-<br>
-<br>
-<br>
-<br> 
-<br>
-<br>
-<br>
-<div id="displaybelow"> Table will display here... </div>
-<div id="answer"> </div> 
-
-<div><button class="button previous" id="previous" name="previous" style="float: left;" onclick="previousButton(); return false;"> Previous </button>
-<button class="button next" id="next" name="next" style="float:right; width:128px;" onclick="nextButton(); return false;"> Next </button> </div>
-<button class="button download" id="download" name="download" onclick="download()" style="margin-left:279px;"> Download </button>
-
-</div> <!-- tables div end-->
 </section>
 
 <footer>Edwards Lab</footer>
 
 </body>
 </html>
+

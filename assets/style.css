@@ -67,6 +67,20 @@ li a:hover {
 
 /*  ------------- END OF PAGE LAYOUT STYLING ---------- */
 
+/* ---------- HOME PAGE STYLING ---------  */
+#hp_tab {
+    border-spacing: 60px;
+    width: 100%;
+}
+#hp_tab td {
+    text-align: center;
+    padding: 10px;
+}
+#hp_tab tr, #hp_tab td {
+    border: 1px dashed;
+}
+/*  ------------- END OF HOME PAGE STYLING ---------- */
+
 /* ---------- DATA SEARCH CHARACTERISTICS ---------  */
 input[type=text] {
     font-family:Arial;

@@ -13,7 +13,7 @@ if ($conn->connect_error) {
  
  /*$column is the textbox that is being typed in*/
 $column = $_REQUEST["r"];
-$array = [];
+$array = array();
 
 /*BacteriaID textbox is being typed in*/
  if ($column == "Name") { 
